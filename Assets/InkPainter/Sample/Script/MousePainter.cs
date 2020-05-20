@@ -14,7 +14,7 @@ namespace Es.InkPainter.Sample {
 		}
 
 		[SerializeField]
-		private Brush brush1;
+		public Brush brush1;
 
 		[SerializeField]
 		private Brush brush2;
@@ -25,14 +25,15 @@ namespace Es.InkPainter.Sample {
 		[SerializeField]
 		bool erase = false;
 
-		private void Update () {
-			if (Input.GetMouseButton (0)) {
-				PaintGame(brush1);
-			}
+		private void Update () 
+		{
+			// if (Input.GetMouseButton (0)) {
+			// 	PaintGame(brush1);
+			// }
 
-			if (Input.GetMouseButton (1)) {
-				PaintGame(brush2);
-			}
+			// if (Input.GetMouseButton (1)) {
+			// 	PaintGame(brush2);
+			// }
 		}
 
 		public void OnGUI () {
@@ -42,7 +43,7 @@ namespace Es.InkPainter.Sample {
 			}
 		}
 
-		void PaintGame (Brush brush) {
+		public void PaintGame (Brush brush) {
 			var ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			bool success = true;
 			RaycastHit hitInfo;
