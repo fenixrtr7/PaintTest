@@ -72,5 +72,17 @@ namespace Es.InkPainter.Sample {
 					Debug.LogError ("Failed to paint.");
 			}
 		}
+
+		public void CahngeColor()
+		{
+			if(brush1.Color == Color.red)
+			{
+				brush1.Color = Color.green;
+			}
+			else
+			{
+				brush1.Color = Color.red;	
+			}
+		}
 	}
 }
