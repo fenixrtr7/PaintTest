@@ -26,9 +26,8 @@ public class MultiTouch : MonoBehaviour
             var touch = Input.GetTouch(i);
 
             //Do whatever you want with the current touch.
-			Debug.Log("Active");
-			mousePainter.PaintGame(mousePainter.brush1);
-
+			//Debug.Log("Active");
+			mousePainter.PaintGame(mousePainter.brush1, touch.position);
         }
 
 
@@ -39,7 +38,7 @@ public class MultiTouch : MonoBehaviour
         // for(int i = 0; i < Input.touchCount; i++)
         // {
         //     //Do something with the touches
-		// 	Debug.Log("Hola");
+			
         // }
     }
 }
