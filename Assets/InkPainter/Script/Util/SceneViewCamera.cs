@@ -52,8 +52,8 @@ namespace Es.Utility
 			if(diff.magnitude < Vector3.kEpsilon)
 				return;
 
-			if(Input.GetMouseButton(2))
-				transform.Translate(-diff * Time.deltaTime * moveSpeed);
+			// if(Input.GetMouseButton(2))
+			// 	transform.Translate(-diff * Time.deltaTime * moveSpeed);
 			// else if(Input.GetMouseButton(1))
 			// 	CameraRotate(new Vector2(-diff.y, diff.x) * rotateSpeed);
 
