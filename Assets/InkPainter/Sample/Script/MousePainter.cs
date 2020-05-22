@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 namespace Es.InkPainter.Sample
 {
@@ -47,8 +48,9 @@ namespace Es.InkPainter.Sample
                     canvas.ResetPaint();
             }
         }
+        
 
-        public void PaintGame(Brush brush, Vector3 inputPosition)
+        public IEnumerator PaintGame(Brush brush, Vector3 inputPosition)
         {
             var ray = Camera.main.ScreenPointToRay(inputPosition); //Input.mousePosition
             bool success = true;
@@ -82,6 +84,8 @@ namespace Es.InkPainter.Sample
                 if (!success)
                     Debug.LogError("Failed to paint.");
             }
+
+            yield return new WaitForSeconds(0.1f);
         }
 
         public void CahngeColor()
