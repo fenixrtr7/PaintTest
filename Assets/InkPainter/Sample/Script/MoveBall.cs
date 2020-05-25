@@ -14,7 +14,7 @@ public class MoveBall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		timeLimitFall = Random.Range(.9f, 2f);
 	}
 	
 	// Update is called once per frame
