@@ -37,14 +37,14 @@ public class MoveBall : MonoBehaviour {
 			currentTimeFall = 0;
 			if (!ManagerBall.instance.listBalls.Any())
 			{
-				Instantiate(objectFall, this.transform);
+				GameObject objectClone = Instantiate(objectFall, this.transform);
 			}
 			else
 			{
 				ManagerBall.instance.listBalls[0].transform.position = this.transform.position;
+				ManagerBall.instance.listBalls[0].GetComponent<Rigidbody>().useGravity = true;
 				ManagerBall.instance.listBalls[0].SetActive(true);
 			}
-			
 		}
 
 
