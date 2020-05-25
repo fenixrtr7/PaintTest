@@ -8,6 +8,11 @@ public class BallPaint : MonoBehaviour
 
     [SerializeField]
     private Brush brush = null;
+    Rigidbody rigid;
+
+    private void Start() {
+        rigid = GetComponent<Rigidbody>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +22,22 @@ public class BallPaint : MonoBehaviour
             if (canvas != null)
                 canvas.Paint(brush, transform.position);
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
+    }
+
+    private void OnEnable() {
+        ManagerBall.instance.listBalls.Remove(gameObject);
+        rigid.useGravity = true;
+    }
+
+    private void OnDisable() {
+        //
+        ManagerBall.instance.listBalls.Add(gameObject);
+        rigid.useGravity = false;
+        rigid.velocity = Vector3.zero;
+
+        transform.position = new Vector3(0, -10, 0);
     }
 }

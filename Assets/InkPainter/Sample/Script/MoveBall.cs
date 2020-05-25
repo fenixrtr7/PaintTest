@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MoveBall : MonoBehaviour {
 
@@ -34,7 +35,16 @@ public class MoveBall : MonoBehaviour {
 		if (currentTimeFall >= timeLimitFall)
 		{
 			currentTimeFall = 0;
-			Instantiate(objectFall, this.transform);
+			if (!ManagerBall.instance.listBalls.Any())
+			{
+				Instantiate(objectFall, this.transform);
+			}
+			else
+			{
+				ManagerBall.instance.listBalls[0].transform.position = this.transform.position;
+				ManagerBall.instance.listBalls[0].SetActive(true);
+			}
+			
 		}
 
 
