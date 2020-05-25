@@ -29,7 +29,7 @@ public class BallPaint : MonoBehaviour
 
     private void OnEnable() {
         ManagerBall.instance.listBalls.Remove(gameObject);
-        rigid.useGravity = true;
+        // rigid.useGravity = true;
     }
 
     private void OnDisable() {
