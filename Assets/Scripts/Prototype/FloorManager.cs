@@ -11,7 +11,7 @@ public class FloorManager : MonoBehaviour
     void Awake()
     {
         if (instance == null){
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             instance = this;
         }
         else if (instance != this){

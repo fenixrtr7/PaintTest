@@ -11,3 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/InkPainter/Sample/SampleScene/New Scene.unity
     guid: c082958745269d040845985207b791ed
+  - enabled: 1
+    path: Assets/Scenes/Room for 4.unity
+    guid: 2ee0730a57686094da01c7ff0456e192
+  m_configObjects: {}
